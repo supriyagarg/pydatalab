@@ -17,6 +17,6 @@ from __future__ import absolute_import
 from google.cloud.monitoring import Aligner, Reducer
 from ._group import Groups
 from ._metric import MetricDescriptors
-from ._query import Query
+from ._query import Query, TimeInterval
 from ._query_metadata import QueryMetadata
 from ._resource import ResourceDescriptors
