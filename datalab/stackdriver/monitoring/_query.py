@@ -20,6 +20,7 @@ import google.cloud.monitoring
 import pandas
 
 from . import _query_metadata
+from . import _query_results
 from . import _utils
 
 
@@ -106,6 +107,19 @@ class Query(google.cloud.monitoring.Query):
   def metadata(self):
     """Retrieves the metadata for the query."""
     return _query_metadata.QueryMetadata(self)
+
+  def results(self, use_short_name=True):
+    """Retrieves results for the query.
+
+    Args:
+      use_short_name: Whether to use a shortened form of the metric_type.
+    Returns:
+      A QueryResults object containing the results.
+    """
+    name = self.metric_type
+    if use_short_name:
+      name = name.split('/')[-1]
+    return _query_results.QueryResults(self.as_dataframe(), name)
 
 
 def _get_utcnow():

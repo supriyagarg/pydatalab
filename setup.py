@@ -75,6 +75,7 @@ for accessing Google's Cloud Platform services such as Google BigQuery.
     'oauth2client==2.0.2',
     'pandas>=0.17.1',
     'pandas-profiling>=1.0.0a2',
+    'plotly==1.12.5',
     'python-dateutil==2.5.0',
     'pytz>=2015.4',
     'pyyaml==3.11',
